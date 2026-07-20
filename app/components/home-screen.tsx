@@ -75,7 +75,7 @@ export function HomeScreen() {
       {state.message ? <InlineNotice>{state.message}</InlineNotice> : null}
       <section className="homeHero">
         <div className="heroCopy">
-          <p className="eyebrow">DAY {day.order} · {formatDay(day.date)}</p>
+          <p className="eyebrow">TODAY’S LITTLE SEED · DAY {day.order}</p>
           <h1>{data.currentUser.name}님,<br /><em>말씀 한 모금</em> 어때요?</h1>
           <p>{data.phase.message || "오늘의 작은 묵상이 우리 모두의 나무를 키워요."}</p>
         </div>
@@ -102,7 +102,7 @@ export function HomeScreen() {
       </section>
 
       <section className="todayCard" aria-labelledby="today-reading-title">
-        <div className="todayCardLabel"><span>오늘의 본문</span><i aria-hidden="true">{completed ? "읽음 ✓" : "읽기 전"}</i></div>
+        <div className="todayCardLabel"><span>오늘 심을 말씀 한 알</span><i aria-hidden="true">{completed ? "새싹이 났어요 ✓" : "물 주기 전"}</i></div>
         <p>{formatDay(day.date)}</p>
         <h2 id="today-reading-title" className="scriptureText">{day.passage}</h2>
         <h3>{day.title}</h3>
