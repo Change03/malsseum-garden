@@ -343,6 +343,16 @@ export function gardenForWeek(data: WeekData, weekNumber: number): Garden {
     ?? data.garden;
 }
 
+export function gardenMilestone(garden: Garden) {
+  const goal = Math.max(1, garden.totalCount);
+  const bonusCount = Math.max(0, garden.completedCount - goal);
+  return {
+    goal,
+    goalReached: garden.completedCount >= goal,
+    bonusCount,
+  };
+}
+
 export function weekForDay(
   data: WeekData,
   day: CampaignDay | undefined,

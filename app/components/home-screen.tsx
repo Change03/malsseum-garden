@@ -11,6 +11,7 @@ import {
   focusDay,
   formatDay,
   gardenForWeek,
+  gardenMilestone,
   variantsForDay,
 } from "./model";
 import { ErrorScreen, LoadingScreen, SignedOutLanding, ConsentScreen } from "./state-screens";
@@ -36,6 +37,7 @@ export function HomeScreen() {
   const future = day.isFuture;
   const canComplete = day.canComplete;
   const garden = gardenForWeek(data, day.weekNumber);
+  const milestone = gardenMilestone(garden);
   const weekDays = daysForWeek(data, day.weekNumber);
   const percent = Math.round(garden.percentToNext);
   const participantCount = data.participants.length;
@@ -75,7 +77,7 @@ export function HomeScreen() {
       {state.message ? <InlineNotice>{state.message}</InlineNotice> : null}
       <section className="homeHero">
         <div className="heroCopy">
-          <p className="eyebrow">DAY {day.order} · {formatDay(day.date)}</p>
+          <p className="eyebrow">TODAY’S LITTLE SEED · DAY {day.order}</p>
           <h1>{data.currentUser.name}님,<br /><em>말씀 한 모금</em> 어때요?</h1>
           <p>{data.phase.message || "오늘의 작은 묵상이 우리 모두의 나무를 키워요."}</p>
         </div>
@@ -88,7 +90,11 @@ export function HomeScreen() {
       <section className="gardenProgressCard" aria-label="공동체 성장 현황">
         <div className="progressTopline">
           <div><span className="pulseDot" aria-hidden="true" />오늘 <strong>{completedToday}/{participantCount}명</strong></div>
-          <strong>{garden.nextLabel ?? "완성 정원"} {percent}%</strong>
+          <strong>{milestone.goalReached
+            ? milestone.bonusCount > 0
+              ? `정원 완성 · 보너스 +${milestone.bonusCount}`
+              : "정원 완성 100%"
+            : `${garden.nextLabel ?? "완성 정원"} ${percent}%`}</strong>
         </div>
         <div className="progressTrack"><span style={{ width: `${percent}%` }} /></div>
         <div className="avatarSummary">
@@ -97,12 +103,14 @@ export function HomeScreen() {
               <span key={participant.id} style={{ zIndex: 5 - index }}>{participant.name.slice(0, 1)}</span>
             ))}
           </div>
-          <p>{day.weekNumber}주차 {garden.completedCount}/{garden.totalCount}회 · {garden.remaining > 0 ? `다음 단계까지 ${garden.remaining}걸음` : "완성 목표 달성"}</p>
+          <p>{milestone.goalReached
+            ? `${day.weekNumber}주차 ${milestone.goal}걸음으로 정원 완성${milestone.bonusCount > 0 ? ` · 보너스 ${milestone.bonusCount}걸음` : ""}`
+            : `${day.weekNumber}주차 ${garden.completedCount}/${milestone.goal}걸음 · 다음 단계까지 ${garden.remaining}걸음`}</p>
         </div>
       </section>
 
       <section className="todayCard" aria-labelledby="today-reading-title">
-        <div className="todayCardLabel"><span>오늘의 본문</span><i aria-hidden="true">{completed ? "읽음 ✓" : "읽기 전"}</i></div>
+        <div className="todayCardLabel"><span>오늘 심을 말씀 한 알</span><i aria-hidden="true">{completed ? "새싹이 났어요 ✓" : "물 주기 전"}</i></div>
         <p>{formatDay(day.date)}</p>
         <h2 id="today-reading-title" className="scriptureText">{day.passage}</h2>
         <h3>{day.title}</h3>

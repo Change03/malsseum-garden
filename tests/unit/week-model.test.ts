@@ -2,6 +2,7 @@ import { describe, expect, it } from "vitest";
 import {
   daysForWeek,
   gardenForWeek,
+  gardenMilestone,
   normalizeWeek,
   withCompletion,
 } from "../../app/components/model";
@@ -111,6 +112,23 @@ describe("two-week client model", () => {
     expect(gardenForWeek(data, 2)).toMatchObject({
       completedCount: 0,
       stage: 0,
+    });
+  });
+
+  it("treats participation after 56 checks as bonus growth", () => {
+    const completions = Array.from({ length: 9 }, (_, participantIndex) =>
+      Array.from({ length: 7 }, (_, dayIndex) => ({
+        participantId: `p${String(participantIndex + 1).padStart(2, "0")}`,
+        dayId: `d${dayIndex + 1}`,
+        completed: true,
+      })),
+    ).flat().slice(0, 60);
+    const garden = gardenForWeek(normalizeWeek(payload(completions)), 1);
+
+    expect(gardenMilestone(garden)).toEqual({
+      goal: 56,
+      goalReached: true,
+      bonusCount: 4,
     });
   });
 });

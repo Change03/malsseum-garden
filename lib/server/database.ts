@@ -291,7 +291,9 @@ async function initializeDatabase() {
     ),
   ];
 
-  await d1.batch(seedStatements);
+  for (let offset = 0; offset < seedStatements.length; offset += 10) {
+    await d1.batch(seedStatements.slice(offset, offset + 10));
+  }
 }
 
 export async function purgePersonalDataIfDue(now = new Date()) {

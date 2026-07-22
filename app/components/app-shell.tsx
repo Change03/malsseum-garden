@@ -36,7 +36,7 @@ export function AppShell({ data, active, children, lastUpdated, stickyAction }: 
     <div className={`appFrame ${stickyAction ? "hasStickyAction" : ""}`}>
       <header className="appHeader">
         <Link className="brandLockup" href="/" aria-label="말씀정원 홈">
-          <span className="brandMark" aria-hidden="true">♧</span>
+          <span className="brandMark" aria-hidden="true">🌱</span>
           <span>{data.campaign.title}</span>
         </Link>
         <div className="headerActions">
@@ -60,10 +60,10 @@ export function AppShell({ data, active, children, lastUpdated, stickyAction }: 
       {stickyAction ? <div className="stickyAction"><div>{stickyAction}</div></div> : null}
       <nav className="bottomNav" aria-label="주요 메뉴">
         <Link href="/" className={active === "home" ? "active" : ""} aria-current={active === "home" ? "page" : undefined}>
-          <span aria-hidden="true">⌂</span><strong>오늘</strong>
+          <span aria-hidden="true">🌿</span><strong>오늘</strong>
         </Link>
         <Link href="/together" className={active === "together" ? "active" : ""} aria-current={active === "together" ? "page" : undefined}>
-          <span aria-hidden="true">♧</span><strong>함께</strong>
+          <span aria-hidden="true">🌼</span><strong>함께</strong>
         </Link>
       </nav>
     </div>

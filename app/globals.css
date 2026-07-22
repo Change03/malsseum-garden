@@ -2670,6 +2670,258 @@ button.avatarButton:disabled {
   line-height: 1.55;
 }
 
+.togetherViewSwitch {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 5px;
+  margin-top: 14px;
+  padding: 5px;
+  border: 1px solid var(--line);
+  border-radius: 17px;
+  background: #ebe9e1;
+}
+
+.togetherViewSwitch button {
+  display: flex;
+  min-height: 48px;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  padding: 8px 10px;
+  border: 0;
+  border-radius: 13px;
+  background: transparent;
+  color: var(--muted);
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 850;
+}
+
+.togetherViewSwitch button span {
+  font-size: 9px;
+  font-weight: 700;
+  opacity: 0.7;
+}
+
+.togetherViewSwitch button.selected {
+  background: var(--card);
+  box-shadow: 0 3px 12px rgba(37, 54, 45, 0.08);
+  color: var(--forest);
+}
+
+.todayRollCallSection {
+  margin-top: 14px;
+  padding: 20px 16px 16px;
+  border: 1px solid var(--line);
+  border-radius: 24px;
+  background: var(--card);
+}
+
+.todayRollCallProgress {
+  margin-top: 17px;
+  padding: 14px;
+  border-radius: 16px;
+  background: #f2f5ec;
+}
+
+.todayRollCallProgress > div {
+  height: 8px;
+  overflow: hidden;
+  border-radius: 999px;
+  background: #dfe6d8;
+}
+
+.todayRollCallProgress > div span {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, var(--leaf), var(--forest));
+  transition: width 300ms ease;
+}
+
+.todayRollCallProgress p {
+  display: flex;
+  align-items: baseline;
+  gap: 3px;
+  margin-top: 9px;
+  color: var(--forest);
+  font-size: 11px;
+}
+
+.todayRollCallProgress p strong {
+  font-family: "Noto Serif KR Variable", "Noto Serif KR", serif;
+  font-size: 16px;
+}
+
+.todayRollCallProgress p span {
+  margin-left: auto;
+  color: var(--muted);
+  font-size: 9px;
+}
+
+.todayParticipantFilters {
+  display: flex;
+  gap: 6px;
+  margin-top: 14px;
+}
+
+.todayParticipantFilters button {
+  min-height: 36px;
+  padding: 7px 13px;
+  border: 1px solid #dfddd5;
+  border-radius: 999px;
+  background: #f8f6f0;
+  color: var(--muted);
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 10px;
+  font-weight: 800;
+}
+
+.todayParticipantFilters button.selected {
+  border-color: var(--forest);
+  background: var(--forest);
+  color: #fff;
+}
+
+.todayRollCallList {
+  display: grid;
+  gap: 7px;
+  margin-top: 12px;
+}
+
+.todayParticipantRow {
+  display: grid;
+  width: 100%;
+  min-height: 66px;
+  grid-template-columns: 42px minmax(0, 1fr) auto 10px;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 11px;
+  border: 1px solid #e5e2da;
+  border-radius: 17px;
+  background: #fbfaf6;
+  color: var(--ink);
+  cursor: pointer;
+  font-family: inherit;
+  text-align: left;
+}
+
+.todayParticipantRow.complete {
+  border-color: rgba(111, 149, 104, 0.28);
+  background: #f0f5ea;
+}
+
+.todayParticipantRow.current {
+  box-shadow: inset 3px 0 0 var(--forest);
+}
+
+.todayParticipantAvatar {
+  display: grid;
+  width: 40px;
+  height: 40px;
+  place-items: center;
+  border-radius: 50%;
+  background: #e7e5dd;
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.todayParticipantRow.complete .todayParticipantAvatar {
+  background: #d9e6d1;
+  color: var(--forest);
+}
+
+.todayParticipantCopy {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.todayParticipantCopy strong {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 12px;
+}
+
+.todayParticipantCopy strong i {
+  padding: 2px 5px;
+  border-radius: 999px;
+  background: var(--forest);
+  color: #fff;
+  font-size: 7px;
+  font-style: normal;
+}
+
+.todayParticipantCopy small {
+  overflow: hidden;
+  color: var(--muted);
+  font-size: 9px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.todayParticipantState {
+  display: inline-flex;
+  min-height: 30px;
+  align-items: center;
+  gap: 4px;
+  padding: 5px 8px;
+  border-radius: 999px;
+  background: #efede6;
+  color: var(--muted);
+  font-size: 8px;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+.todayParticipantState i {
+  font-size: 10px;
+  font-style: normal;
+}
+
+.todayParticipantRow.complete .todayParticipantState {
+  background: var(--forest);
+  color: #fff;
+}
+
+.todayParticipantCue {
+  color: #a4aaa4;
+  font-size: 17px;
+  font-weight: 900;
+}
+
+.todayEveryoneComplete {
+  display: grid;
+  min-height: 150px;
+  place-items: center;
+  align-content: center;
+  gap: 5px;
+  border-radius: 18px;
+  background: #f0f5ea;
+  color: var(--forest);
+  text-align: center;
+}
+
+.todayEveryoneComplete span {
+  color: var(--gold);
+  font-size: 22px;
+}
+
+.todayEveryoneComplete strong {
+  font-family: "Noto Serif KR Variable", "Noto Serif KR", serif;
+  font-size: 17px;
+}
+
+.todayEveryoneComplete p {
+  color: var(--muted);
+  font-size: 10px;
+}
+
 .todayStatusSection {
   margin-top: 16px;
   padding: 18px 16px;
@@ -3076,6 +3328,18 @@ button.matrixCheck {
   font-size: 9px;
 }
 
+.growthRing.complete {
+  background: conic-gradient(var(--gold) 360deg, rgba(255, 255, 255, 0.12) 0);
+  box-shadow: 0 0 0 7px rgba(211, 173, 91, 0.09);
+}
+
+.growthRing.complete small {
+  display: block;
+  margin-top: -2px;
+  margin-left: 0;
+  color: #f1d797;
+}
+
 .growthSummary .eyebrow {
   color: var(--lime);
 }
@@ -3086,6 +3350,7 @@ button.matrixCheck {
   font-size: 19px;
   line-height: 1.4;
   letter-spacing: -0.04em;
+  white-space: pre-line;
 }
 
 .growthSummary p:last-child {
@@ -3596,5 +3861,475 @@ button.matrixCheck {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
+  }
+}
+
+:root {
+  --paper: #fff9ed;
+  --paper-deep: #f4ead9;
+  --card: #fffdf7;
+  --ink: #33443d;
+  --muted: #788179;
+  --line: #eadfcd;
+  --forest: #35624f;
+  --forest-deep: #264b3d;
+  --sage: #82a879;
+  --sage-light: #e9f1df;
+  --leaf: #76a36e;
+  --lime: #d8e99d;
+  --blush: #f1aaa6;
+  --gold: #e5ae5e;
+  --shadow: 0 14px 0 rgba(101, 86, 62, 0.035), 0 22px 48px rgba(72, 80, 66, 0.09);
+  --radius-xl: 34px;
+  --radius-lg: 26px;
+  --radius-md: 18px;
+}
+
+html {
+  background: #e9dfce;
+}
+
+body {
+  background:
+    radial-gradient(circle at 12% 8%, rgba(255, 255, 255, 0.86), transparent 24rem),
+    radial-gradient(circle at 88% 26%, rgba(236, 190, 177, 0.2), transparent 22rem),
+    #e9dfce;
+}
+
+.appFrame {
+  background:
+    radial-gradient(circle at 12% 18%, rgba(244, 184, 177, 0.13) 0 5px, transparent 6px),
+    radial-gradient(circle at 88% 36%, rgba(226, 184, 100, 0.12) 0 4px, transparent 5px),
+    var(--paper);
+}
+
+.appHeader {
+  border-bottom-color: rgba(226, 214, 194, 0.72);
+  background: rgba(255, 249, 237, 0.9);
+}
+
+.brandMark {
+  border: 2px solid rgba(255, 255, 255, 0.72);
+  border-radius: 50% 50% 46% 46%;
+  background: linear-gradient(145deg, #8fba82, #4f8065);
+  font-family: inherit;
+  font-size: 17px;
+  box-shadow: 0 7px 0 rgba(53, 98, 79, 0.13), 0 10px 22px rgba(53, 98, 79, 0.16);
+}
+
+.avatarButton {
+  border: 2px solid #fff9ed;
+  background: #f4c8b7;
+  box-shadow: 0 4px 0 #dfaa97;
+}
+
+.homeHero {
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  background:
+    radial-gradient(circle at 78% 26%, rgba(255, 244, 191, 0.28), transparent 32%),
+    radial-gradient(circle at 12% 85%, rgba(242, 174, 167, 0.15), transparent 36%),
+    linear-gradient(145deg, #477862, #2d5b49);
+  box-shadow: 0 9px 0 #dfd2bc, 0 24px 42px rgba(50, 77, 62, 0.18);
+}
+
+.homeHero::before {
+  top: 22px;
+  right: 22px;
+  width: 112px;
+  height: 112px;
+  border: 0;
+  background: radial-gradient(circle, rgba(255, 247, 193, 0.8) 0 2px, transparent 3px) 0 0 / 24px 24px;
+  opacity: 0.65;
+}
+
+.homeHero::after {
+  position: absolute;
+  right: -18px;
+  bottom: -34px;
+  left: -18px;
+  height: 74px;
+  border-radius: 50% 50% 0 0;
+  background: rgba(29, 73, 57, 0.24);
+  content: "";
+}
+
+.heroCopy .eyebrow {
+  display: inline-flex;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.12);
+  color: #e9f3b0;
+}
+
+.heroCopy h1 em {
+  color: #e3efa3;
+  text-shadow: 0 2px 0 rgba(26, 65, 51, 0.35);
+}
+
+.stagePill {
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 253, 237, 0.16);
+}
+
+.heroPlantWrap .plantSprite {
+  z-index: 2;
+  animation: gardenBreathe 3.8s ease-in-out infinite;
+}
+
+.gardenProgressCard {
+  border-color: #eadcc8;
+  border-radius: 24px 24px 30px 30px;
+  box-shadow: 0 7px 0 #eadfce, 0 16px 28px rgba(70, 79, 67, 0.08);
+}
+
+.progressTrack {
+  height: 10px;
+  padding: 2px;
+  background: #efe8d9;
+  box-shadow: inset 0 1px 2px rgba(74, 83, 68, 0.08);
+}
+
+.progressTrack span {
+  background: linear-gradient(90deg, #85ad78, #c9df86, #f0cf75);
+}
+
+.avatarStack span:nth-child(2n) {
+  background: #f6d1c4;
+}
+
+.avatarStack span:nth-child(3n) {
+  background: #f7e6ae;
+}
+
+.todayCard,
+.contentPanel,
+.matrixSection,
+.adminPanel,
+.todayRollCallSection {
+  border: 1px solid #eadfcf;
+  box-shadow: var(--shadow);
+}
+
+.todayCard {
+  border-top: 6px solid #f1c2ae;
+  background:
+    linear-gradient(90deg, rgba(124, 163, 110, 0.055) 1px, transparent 1px) 0 0 / 28px 100%,
+    var(--card);
+}
+
+.todayCard::before {
+  position: absolute;
+  top: -6px;
+  left: 30px;
+  width: 42px;
+  height: 25px;
+  border-radius: 0 0 12px 12px;
+  background: #f5d984;
+  content: "";
+  opacity: 0.88;
+}
+
+.todayCard::after {
+  border-color: rgba(242, 190, 170, 0.14);
+}
+
+.todayCardLabel i,
+.countBadge,
+.stagePill {
+  box-shadow: inset 0 0 0 1px rgba(73, 104, 81, 0.08);
+}
+
+.primaryButton,
+.secondaryButton {
+  border-radius: 18px;
+}
+
+.primaryButton {
+  background: linear-gradient(180deg, #477c62, #35624f);
+  box-shadow: 0 5px 0 #264b3d, 0 11px 20px rgba(53, 98, 79, 0.17);
+}
+
+.primaryButton:hover {
+  transform: translateY(-2px);
+}
+
+.primaryButton:active {
+  transform: translateY(3px);
+  box-shadow: 0 2px 0 #264b3d;
+}
+
+.weekDay {
+  border-color: #eadfcd;
+  background: #fffaf1;
+  box-shadow: 0 3px 0 rgba(116, 94, 63, 0.06);
+}
+
+.weekDay.completed {
+  border-color: #bfd2aa;
+  background: #edf5df;
+}
+
+.weekDay.completed::after {
+  font-size: 10px;
+  content: "🌱";
+}
+
+.togetherBanner {
+  border: 1px solid #e4d8c4;
+  background: linear-gradient(135deg, #fff7e8, #eef4df);
+  box-shadow: 0 6px 0 #e8ddca;
+}
+
+.bottomNav {
+  border-top-color: rgba(224, 210, 189, 0.9);
+  background: rgba(255, 250, 240, 0.96);
+}
+
+.bottomNav a {
+  font-size: 19px;
+  transition: transform 160ms ease, background 160ms ease;
+}
+
+.bottomNav a.active {
+  background: #edf3e2;
+  transform: translateY(-2px);
+}
+
+.bottomNav a.active::before {
+  top: auto;
+  bottom: 2px;
+  height: 4px;
+  background: #86aa76;
+}
+
+.stickyAction {
+  background: linear-gradient(transparent, rgba(255, 248, 234, 0.98) 34%);
+}
+
+.completionCta {
+  border: 2px solid rgba(255, 255, 255, 0.22);
+  border-radius: 24px;
+  background: linear-gradient(145deg, #56876d, #35624f);
+  box-shadow: 0 7px 0 #234638, 0 17px 32px rgba(36, 70, 56, 0.24);
+  transition: transform 150ms ease, box-shadow 150ms ease;
+}
+
+.completionCta:not(:disabled):active {
+  transform: translateY(4px);
+  box-shadow: 0 3px 0 #234638, 0 10px 20px rgba(36, 70, 56, 0.2);
+}
+
+.completionCtaIcon {
+  background: rgba(238, 246, 203, 0.18);
+  color: #eff6bf;
+}
+
+.completionCta.isComplete .completionCtaIcon {
+  animation: happySprout 620ms cubic-bezier(0.2, 0.9, 0.25, 1.2);
+}
+
+.togetherHero {
+  border: 1px solid #e3d9c7;
+  background:
+    radial-gradient(circle at 80% 20%, rgba(249, 213, 128, 0.28), transparent 35%),
+    linear-gradient(145deg, #edf3df, #fff7e8);
+  box-shadow: 0 7px 0 #e8decc;
+}
+
+.togetherViewSwitch {
+  border-color: #e1d5c2;
+  background: #f1e7d7;
+  box-shadow: 0 4px 0 #e1d4bf;
+}
+
+.togetherViewSwitch button {
+  border-radius: 15px 19px 16px 18px;
+}
+
+.togetherViewSwitch button.selected {
+  background: #fffaf0;
+  box-shadow: 0 4px 0 rgba(93, 79, 57, 0.08), 0 8px 18px rgba(75, 83, 69, 0.08);
+}
+
+.todayRollCallSection {
+  border-top: 6px solid #f1c2ae;
+  background:
+    radial-gradient(circle at 90% 10%, rgba(245, 217, 132, 0.2), transparent 130px),
+    var(--card);
+}
+
+.todayRollCallProgress {
+  border: 1px solid #e4dfcb;
+  background: #f3f5e9;
+  box-shadow: inset 0 2px 4px rgba(75, 89, 72, 0.04);
+}
+
+.todayRollCallProgress > div {
+  background: #e4e8d8;
+}
+
+.todayRollCallProgress > div span {
+  background: linear-gradient(90deg, #82a879, #c9df86, #f1ca77);
+}
+
+.todayParticipantFilters button {
+  border-color: #e4d9c8;
+  border-radius: 13px 17px 16px 14px;
+  background: #fff9ed;
+  box-shadow: 0 3px 0 rgba(103, 83, 56, 0.07);
+}
+
+.todayParticipantFilters button.selected {
+  border-color: #477c62;
+  background: linear-gradient(180deg, #56876d, #35624f);
+  box-shadow: 0 3px 0 #264b3d;
+}
+
+.todayRollCallList {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 9px;
+}
+
+.todayParticipantRow {
+  min-height: 88px;
+  grid-template-columns: 38px minmax(0, 1fr);
+  gap: 8px;
+  padding: 11px 10px;
+  border-color: #eadfcd;
+  border-radius: 18px 22px 20px 17px;
+  background: #fffaf1;
+  box-shadow: 0 4px 0 rgba(116, 94, 63, 0.07);
+}
+
+.todayParticipantRow.complete {
+  border-color: #bfd2aa;
+  background: linear-gradient(145deg, #edf5df, #fff9e9);
+  box-shadow: 0 4px 0 rgba(85, 119, 77, 0.12);
+}
+
+.todayParticipantRow.current {
+  box-shadow: inset 3px 0 0 #f0b4aa, 0 4px 0 rgba(116, 94, 63, 0.07);
+}
+
+.todayParticipantAvatar {
+  width: 36px;
+  height: 36px;
+  background: #f3eadb;
+  font-size: 18px;
+  box-shadow: 0 3px 0 rgba(104, 84, 58, 0.08);
+}
+
+.todayParticipantRow.complete .todayParticipantAvatar {
+  background: #e6efcf;
+}
+
+.todayParticipantCopy strong {
+  font-size: 11px;
+}
+
+.todayParticipantCopy small {
+  white-space: normal;
+  line-height: 1.35;
+}
+
+.todayParticipantState {
+  min-height: 26px;
+  grid-column: 1 / -1;
+  justify-self: stretch;
+  justify-content: center;
+  border: 1px solid #e7dfd0;
+  border-radius: 11px 15px 14px 12px;
+  background: #f6efe4;
+}
+
+.todayParticipantRow.complete .todayParticipantState {
+  border-color: #bfd2aa;
+  background: #dcebc6;
+  color: #35624f;
+}
+
+.todayParticipantCue {
+  display: none;
+}
+
+.todayEveryoneComplete {
+  grid-column: 1 / -1;
+  border: 1px solid #cadbac;
+  background: linear-gradient(145deg, #edf5df, #fff5dc);
+  box-shadow: 0 5px 0 rgba(85, 119, 77, 0.1);
+}
+
+.matrixCheck.checked {
+  border-color: #5f8c69;
+  background: #6e9a71;
+  box-shadow: 0 2px 0 #456d53;
+}
+
+.growthSummary {
+  background:
+    radial-gradient(circle at 90% 12%, rgba(240, 207, 117, 0.16), transparent 120px),
+    linear-gradient(145deg, #35624f, #264b3d);
+  box-shadow: 0 7px 0 #d9cdb8, 0 17px 30px rgba(43, 72, 58, 0.16);
+}
+
+@keyframes gardenBreathe {
+  0%,
+  100% {
+    transform: translateY(0) rotate(-0.4deg);
+  }
+
+  50% {
+    transform: translateY(-5px) rotate(0.6deg);
+  }
+}
+
+@keyframes happySprout {
+  0% {
+    transform: scale(0.72) rotate(-8deg);
+  }
+
+  60% {
+    transform: scale(1.14) rotate(5deg);
+  }
+
+  100% {
+    transform: scale(1) rotate(0);
+  }
+}
+
+@media (max-width: 420px) {
+  .homeHero {
+    border-radius: 28px;
+  }
+
+  .gardenProgressCard {
+    margin-right: 9px;
+    margin-left: 9px;
+  }
+
+  .togetherHero {
+    grid-template-columns: minmax(0, 1fr) 102px;
+  }
+
+  .togetherHero .plantSprite {
+    width: 112px;
+    height: 112px;
+  }
+
+  .togetherHero h1 {
+    font-size: clamp(28px, 7.4vw, 32px);
+  }
+}
+
+@media (max-width: 350px) {
+  .todayRollCallList {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .heroPlantWrap .plantSprite,
+  .completionCta.isComplete .completionCtaIcon {
+    animation: none;
   }
 }
